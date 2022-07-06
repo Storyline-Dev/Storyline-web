@@ -18,13 +18,24 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from users import views as user_views
 from storylineapp import views as storyline_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('storylineapp.urls')),
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='user-register'),
     path('home/', storyline_views.home, name='storyline-home'),
+    path('clinician-home', user_views.clinicianHome, name='clinician-home'),
+    path('client-home', user_views.clientHome, name='client-home'),
+    path('clinician-profile', user_views.clinicianProfile, name='clinician-profile'),
+    path('client-profile', user_views.clientProfile, name='client-profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('profile/', user_views.profile, name='user-profile'),
+    path('dashboard/', user_views.dashboard, name='user-dashboard'),
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
