@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return render(request, 'storyline/home.html')
+    return render(request, 'users/dashboard.html')

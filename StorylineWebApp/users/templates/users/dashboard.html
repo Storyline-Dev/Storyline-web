@@ -1,154 +1,31 @@
 {% extends "storyline/base.html" %}
 {% block content %}
 {% include 'storyline/titleNav.html' %}
-<div class="" style="width: 100%;">
-  <!-- client tile -->
-<div class="dashboard display-animation" style="margin: 0 auto; width: 1140px;">
-  <a class="tile tile-lsr tile-pink ripple-effect" href="#">
+<!-- client tile -->
+<div class="dashboard display-animation" style="width: 100%; background-color: aquamarine;">
+  <a class="tile tile-lsr patient-tile ripple-effect" href="#">
     {% include 'users/patientTile.html' %}
   </a>
 </div>
-<div class="dashboardtitle">
-  <h1>Patient's Dashboard</h1>
-</div>
 <!-- feature tiles -->
-<div class="dashboard display-animation" style="margin: 0 auto; width: 1140px;">
-  <div class="dashboard display-animation" style="margin: 0 auto; width: 100%;">
-    {% include "users/featureTile.html" with type="square" feature="Hello" %}
-    <a class="tile tile-lg tile-sqr tile-pink ripple-effect" href="#">
-      {% include 'users/featureHeader.html' %}
-      <span class="content-wrapper">
-        <span class="tile-content">
-          <span class="tile-img" style="background-image: url(https://www.google.com/design/images/google_spec.png);"></span>
-          <span class="tile-holder tile-holder-sm">
-            <span class="title">Google Guidelines</span>
-          </span>
-        </span>      
-      </span>
-    </a>
-    <a class="tile tile-lg tile-sqr tile-purple ripple-effect" href="#">
-      <span class="content-wrapper">
-        <span class="tile-content">
-          <span class="tile-img" style="background-image: url(https://www.google.com/design/images/materialreel.png);"></span>
-          <span class="tile-holder tile-holder-sm">
-            <span class="title">Material Design Reel</span>
-          </span>
-        </span>      
-      </span>
-    </a>
-    <a class="tile tile-lg tile-sqr tile-cyan ripple-effect" href="#">
-      <span class="content-wrapper">
-        <span class="tile-content">
-          <span class="tile-img" style="background-image: url(https://www.google.com/design/images/principles.png);"></span>
-          <span class="tile-holder tile-holder-sm">
-            <span class="title">Material Design <span class="caption">PDF</span></span>
-          </span>
-        </span>      
-      </span>
-    </a>
-    <a class="tile tile-amber ripple-effect" href="#">
-      <span class="content-wrapper">
-        <span class="tile-content">
-          <span class="tile-img tile-img-bg" style="background-image: url(https://www.google.com/design/images/doodlearchive.png);"></span>
-          <span class="tile-holder tile-holder-sm">
-            <span class="title">Doodle Archive</span>
-          </span>
-        </span>      
-      </span>
-    </a>
-    <a class="tile tile-light-blue ripple-effect" href="#">
-      <span class="content-wrapper">
-        <span class="tile-content">
-          <span class="tile-img tile-img-bg" style="background-image: url(https://www.google.com/design/images/googleplus.png);"></span>
-          <span class="tile-holder tile-holder-sm">
-            <span class="title">Google+</span>
-          </span>
-        </span>      
-      </span>
-    </a>
-  </div> 
-  
-  <div class="dashboard display-animation" style="margin: 0 auto; width: 1160px; padding: 0px;">
-    <div class="dashboard display-animation" style="margin: 0 auto; width: 280px; padding-top: 0px;">
-      <a class="tile  tile-pink ripple-effect" style="margin-top: 0;" href="#">
-        <span class="content-wrapper">
-          <span class="tile-content">
-            <span class="tile-img" style="background-image: url(https://www.google.com/design/images/google_spec.png);"></span>
-            <span class="tile-holder tile-holder-sm">
-              <span class="title">Google Guidelines</span>
-            </span>
-          </span>      
-        </span>
-      </a>
-      <a class="tile tile-lg tile-sqr tile-purple ripple-effect" href="#">
-        <span class="content-wrapper">
-          <span class="tile-content">
-            <span class="tile-img" style="background-image: url(https://www.google.com/design/images/materialreel.png);"></span>
-            <span class="tile-holder tile-holder-sm">
-              <span class="title">Material Design Reel</span>
-            </span>
-          </span>      
-        </span>
-      </a>
-      <a class="tile tile-cyan ripple-effect" href="#">
-        <span class="content-wrapper">
-          <span class="tile-content">
-            <span class="tile-img" style="background-image: url(https://www.google.com/design/images/principles.png);"></span>
-            <span class="tile-holder tile-holder-sm">
-              <span class="title">Material Design <span class="caption">PDF</span></span>
-            </span>
-          </span>      
-        </span>
-      </a>
-    </div> 
-    
-    <div class="dashboard display-animation" style="margin: 0 auto; width: 570px; margin: 0px; padding-top: 0;">
-      <a class="tile tile-lg tile-pink ripple-effect" style="margin-top: 0;" href="#">
-        <span class="content-wrapper">
-          <span class="tile-content">
-            <span class="tile-img" style="background-image: url(https://www.google.com/design/images/google_spec.png);"></span>
-            <span class="tile-holder tile-holder-sm">
-              <span class="title">Google Guidelines</span>
-            </span>
-          </span>      
-        </span>
-      </a>
-      <a class="tile tile-lg tile-sqr tile-purple ripple-effect" href="#">
-        <span class="content-wrapper">
-          <span class="tile-content">
-            <span class="tile-img" style="background-image: url(https://www.google.com/design/images/materialreel.png);"></span>
-            <span class="tile-holder tile-holder-sm">
-              <span class="title">Material Design Reel</span>
-            </span>
-          </span>      
-        </span>
-      </a>
-      <a class="tile tile-lg tile-sqr tile-cyan ripple-effect" href="#">
-        <span class="content-wrapper">
-          <span class="tile-content">
-            <span class="tile-img" style="background-image: url(https://www.google.com/design/images/principles.png);"></span>
-            <span class="tile-holder tile-holder-sm">
-              <span class="title">Material Design <span class="caption">PDF</span></span>
-            </span>
-          </span>      
-        </span>
-      </a>
-    </div> 
-    
-    <div class="dashboard display-animation" style="margin: 0 auto; width: 280px; padding-left: 0px; padding-top: 0;">
-      <a class="tile tile-tl tile-pink ripple-effect" style="margin-left: 0; margin-top: 0;" href="#">
-        <span class="content-wrapper">
-          <span class="tile-content">
-            <span class="tile-img" style="background-image: url(https://www.google.com/design/images/google_spec.png);"></span>
-            <span class="tile-holder tile-holder-sm">
-              <span class="title">Google Guidelines</span>
-            </span>
-          </span>      
-        </span>
-      </a>
-      
-    </div> 
-  </div>
+<div class="feature-tile-container">
+  <div id="pl" style="background-color: darkolivegreen;">content1</div>
+  <div id="cn"  style="background-color: rgb(170, 198, 122);">content2</div>
+  <div id="ha"  style="background-color: rgb(201, 206, 191);">content3</div>
+  <div id="psci"  style="background-color: rgb(21, 28, 9);">content4</div>
+  <div id="pw"  style="background-color: rgb(70, 111, 0);">content5</div>
+  <div id="sl"  style="background-color: rgb(124, 136, 104);">content6</div>
+  <div id="bs"  style="background-color: rgb(109, 213, 103);">content7</div>
+  <div id="jn"  style="background-color: rgb(223, 223, 223);">content8</div>
+  <div id="pa"  style="background-color: rgb(30, 31, 28);">content9</div>
+  <div id="ew"  style="background-color: rgb(162, 255, 0);">content10</div>
+  <div id="sltk"  style="background-color: rgb(201, 255, 109);">content11</div>
+  <div id="ge"  style="background-color: rgb(35, 55, 0);">content12</div>
+  <div id="spc" style="background-color: rgb(35, 55, 0);">content12</div>
 </div>
-</div>
+
+
+
+
+
 {% endblock content %}

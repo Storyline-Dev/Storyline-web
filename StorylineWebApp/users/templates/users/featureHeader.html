@@ -1,4 +1,7 @@
-<div>
-    <h2 style="float: left;">Feature Header</h2>
-    ->
+{% load static %}
+<div class="feature-header">
+    <span class="feature-header-label">
+        {{ feature }}
+    </span>
+    <img class="tile-header-arrow" src="{% static 'storyline/featureTileArrow.png' %}">
 </div>
