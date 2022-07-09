@@ -102,13 +102,6 @@ a.article-title:hover {
   vertical-align: middle;
 }
 
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
-}
-
 .account-heading {
   font-size: 2.5rem;
 }
@@ -260,75 +253,6 @@ body {
   width: 100%;
   margin: 0 auto; 
   width: 1140px;
-}
-
-/* -- Tiles ------------------------------------------- */
-.tile {
-  color: #212121;
-  overflow: hidden;
-  cursor: pointer;
-  outline: 0;
-  border: 0;
-  border-radius: 0;
-  -webkit-transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-}
-.tile:hover,
-.tile:active,
-.tile.active,
-.tile:focus,
-.tile:active:focus,
-.tile.active:focus {
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.tile {
-  border-radius: 15px;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-}
-/*-- Tiles size --------------------------------------- */
-.tile {
-  width: 270px;
-  height: 130px;
-}
-.tile.tile-sqr {
-  width: 270px;
-}
-
-.tile-tl {
-  width: 270px;
-  height: 550px;
-}
-
-.tile-lg {
-  width: 550px;
-  height: 270px;
-}
-
-.tile-sm {
-  width: 130px;
-  height: 60px;
-}
-
-.tile-tl {
-  width: 270px;
-  height: 550px;
-}
-
-.tile-sr {
-  width: 270px;
-  height: 130px;
-}
-
-.tile-lsr {
-  width: 98%;
-  height: 130px;
-  margin: 0 auto;
 }
 
 /*-- Display animation -------------------------------- */
@@ -487,17 +411,33 @@ profile-tile {
   max-width: 24px;
   max-height: 39px;
   float: right;
-  padding-top: 5px;
+  padding-top: 3px;
 }
 
 .patient-tile {
   background-color: white;
-  width: 100%;
+  width: calc(100% - 30px);
+  height: 133px;
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.patient-tile-content {
+  width: 100%;
+  text-decoration: none;
+  align-items: stretch;
+}
+
+.patient-tile-copy {
+  
+  padding: 16px 10px 8px 8px;
+  color: black;
+  font-weight: 200;
 }
 
 .feature-header {
-  width: 100%;
+  padding: 15px 20px 0px 10px;
 }
 
 .feature-header-label {
@@ -515,7 +455,7 @@ profile-tile {
   background-color: #F6F6F6;
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
   text-decoration: none;
-
+  border-radius: 15px;
 }
 
 .feature-tile-div {
@@ -524,16 +464,144 @@ profile-tile {
 
 .feature-tile-container {
   display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: red;
+  height: 1000px;
+  max-width: 1190px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: 
-    "spc spc pl cn ha psci spc spc"
-    "spc spc pl cn ha ge spc spc"
-    "spc spc pw sl sl bs spc spc"
-    "spc spc jn sl sl bs spc spc"
-    "spc spc jn ew sltk bs spc spc"
-    "spc spc pa ew sltk bs spc spc";
+    "pl cn ha psci"
+    "pl cn ha ge"
+    "pw sl sl bs"
+    "jn sl sl bs"
+    "jn ew sltk bs"
+    "pa ew sltk bs";
+  grid-gap: 15px;
+  padding: 35px;
+}
+
+@media only screen and (max-width:1200px) {
+  .feature-tile-container {
+    display: grid;
+    background-color: yellow;
+    height: 1315px;
+    max-width: 907px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      "pl cn ha"
+      "pl cn ha"
+      "pw sl sl"
+      "jn sl sl"
+      "jn psci bs"
+      "pa ge bs"
+      "ew sltk bs"
+      "ew sltk bs";
+    grid-gap: 15px;
+    padding: 35px;
+  }
+}
+
+@media only screen and (max-width:1000px) {
+  .feature-tile-container {
+    display: grid;
+    background-color: rgb(177, 105, 184);
+    height: 1000px;
+    max-width: 768px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      "pl cn ha"
+      "pl cn ha"
+      "pw sl sl"
+      "jn sl sl"
+      "jn psci bs"
+      "pa ge bs"
+      "ew sltk bs"
+      "ew sltk bs";
+    grid-gap: 15px;
+    padding: 35px;
+  }
+
+  .feature-header-label {
+    max-width: 200px;
+    width: auto;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #4E49FF;
+    word-wrap: normal;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .feature-tile-container {
+    display: grid;
+    background-color: blue;
+    height: 1500px;
+    max-width: 550px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      "cn ha"
+      "cn ha"
+      "sl sl"
+      "sl sl"
+      "pw psci"
+      "ge bs"
+      "pl bs"
+      "pl bs"
+      "jn bs"
+      "jn pa"
+      "ew sltk"
+      "ew sltk";
+    grid-gap: 15px;
+    padding: 35px;
+  }
+}
+
+@media only screen and (max-width:550px) {
+  .feature-tile-container {
+    display: grid;
+    background-color: rgb(164, 208, 61);
+    height: 3450px;
+    max-width: 312px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      "cn"
+      "cn"
+      "ha"
+      "ha"
+      "sl"
+      "sl"
+      "sl"
+      "sl"
+      "pw"
+      "ge"
+      "pl"
+      "pl"
+      "jn"
+      "jn"
+      "ew"
+      "ew"
+      "psci"
+      "bs"
+      "bs"
+      "bs"
+      "bs"
+      "pa"
+      "sltk"
+      "sltk";
+    grid-gap: 15px;
+    padding: 35px;
+  }
 }
 
 #pl {
@@ -586,4 +654,137 @@ profile-tile {
 
 #spc {
   grid-area: spc;
+}
+
+.large-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.account-img {
+  height: 100px;
+  width: 100px;
+  background-color: hotpink;
+}
+
+.patient-img-container {
+  padding: 16px 8px 8px 8px;
+  float: left;
+}
+
+span {
+  margin-right: 10px;
+}
+
+/* dr profile section */
+
+.dr-info {
+  /* background-color: violet; */
+  padding-top: 15px;
+  font-weight: 400;
+}
+
+.dr-info-content {
+  /* background-color: thistle; */
+  float: left;
+  width: 220px;
+}
+
+.dr-profile-account-img {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0px 10px 10px 10px;
+}
+
+.dr-contact-button {
+  width: 100%;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  background-color: #CDCDCD;
+  font-weight: 300;
+}
+
+.dr-contact-button:hover {
+  background-color: #a2a2a2;
+  color: white;
+}
+
+.taking-clients {
+  /* background-color: tomato; */
+  text-align: center;
+  font-weight: 400;
+  padding-top: 15px;
+}
+
+.dr-desc {
+  min-height: 236px;
+  padding: 15px 10px;
+  font-weight: 400;
+}
+
+.dr-profile-container {
+  /* background-color: yellow; */
+  display: grid;
+  height: 600px;
+  max-width: 1140px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+    "di tc dd";
+  grid-gap: 15px;
+  padding: 35px;
+}
+
+#di {
+  grid-area: di;
+}
+
+#tc {
+  grid-area: tc;
+}
+
+#dd {
+  grid-area: dd;
+}
+
+/* clinician home */
+
+.dr-home-button-container {
+  display: grid;
+  height: 163px;
+  max-width: 1190px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "mc mc mc ap ap ap";
+  grid-gap: 15px;
+  padding: 35px;
+}
+
+.dr-home-button-link {
+  text-decoration: none;
+}
+
+.dr-home-button {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+  padding: 15px;
+}
+
+#mc {
+  grid-area: mc;
+}
+
+#ap {
+  grid-area: ap;
+}
+
+.view-add-buttons {
+  width: 100%;
+  display: inline-flex;
 }

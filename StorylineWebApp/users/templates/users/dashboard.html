@@ -2,30 +2,51 @@
 {% block content %}
 {% include 'storyline/titleNav.html' %}
 <!-- client tile -->
-<div class="dashboard display-animation" style="width: 100%; background-color: aquamarine;">
-  <a class="tile tile-lsr patient-tile ripple-effect" href="#">
+<a class="display-animation ripple-effect" href="#">
+  <div class="patient-tile">
     {% include 'users/patientTile.html' %}
-  </a>
-</div>
+  </div>
+</a>
+
 <!-- feature tiles -->
 <div class="feature-tile-container">
-  <div id="pl" style="background-color: darkolivegreen;">content1</div>
-  <div id="cn"  style="background-color: rgb(170, 198, 122);">content2</div>
-  <div id="ha"  style="background-color: rgb(201, 206, 191);">content3</div>
-  <div id="psci"  style="background-color: rgb(21, 28, 9);">content4</div>
-  <div id="pw"  style="background-color: rgb(70, 111, 0);">content5</div>
-  <div id="sl"  style="background-color: rgb(124, 136, 104);">content6</div>
-  <div id="bs"  style="background-color: rgb(109, 213, 103);">content7</div>
-  <div id="jn"  style="background-color: rgb(223, 223, 223);">content8</div>
-  <div id="pa"  style="background-color: rgb(30, 31, 28);">content9</div>
-  <div id="ew"  style="background-color: rgb(162, 255, 0);">content10</div>
-  <div id="sltk"  style="background-color: rgb(201, 255, 109);">content11</div>
-  <div id="ge"  style="background-color: rgb(35, 55, 0);">content12</div>
-  <div id="spc" style="background-color: rgb(35, 55, 0);">content12</div>
+  <div id="pl" class="feature-tile">
+    {% include "users/featureTile.html" with type="square" feature="Practice List" link="#" %}
+  </div>
+  <div id="cn" class="feature-tile">
+    {% include "users/featureTile.html" with type="square" feature="Counseling Notes" link="#" %}
+  </div>
+  <div id="ha" class="feature-tile">
+    {% include "users/featureTile.html" with type="square" feature="Health Assessment" link="#" %}
+  </div>
+  <div id="psci" class="feature-tile">
+    {% include "users/featureTile.html" with type="short-rect" feature="Pre-Session Check Ins" link="#" %}
+  </div>
+  <div id="ge" class="feature-tile">
+    {% include "users/featureTile.html" with type="short-rect" feature="Grounding Exercises" link="#" %}
+  </div>
+  <div id="pw" class="feature-tile">
+    {% include "users/featureTile.html" with type="short-rect" feature="Pathways" link="#" %}
+  </div>
+  <div id="sl" class="feature-tile">
+    {% include "users/featureTile.html" with type="large-rect" feature="Storyline" link="#" %}
+  </div>
+  <div id="bs" class="feature-tile">
+    {% include "users/featureTile.html" with type="tall-rect" feature="Body Scan" link="#" %}
+  </div>
+  <div id="jn" class="feature-tile">
+    {% include "users/featureTile.html" with type="square" feature="Journal" link="#" %}
+  </div>
+  <div id="pa" class="feature-tile">
+    {% include "users/featureTile.html" with type="short-rect" feature="Personality Assessments" link="#" %}
+  </div>
+  <div id="ew" class="feature-tile">
+    {% include "users/featureTile.html" with type="square" feature="Emotion Wheel" link="#" %}
+  </div>
+  <div id="sltk" class="feature-tile">
+    {% include "users/featureTile.html" with type="square" feature="Storyline Toolkit" link="#" %}
+  </div>
+
 </div>
-
-
-
-
 
 {% endblock content %}

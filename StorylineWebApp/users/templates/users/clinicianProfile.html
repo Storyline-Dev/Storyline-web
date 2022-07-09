@@ -2,26 +2,24 @@
 {% load crispy_forms_tags %}
 {% block content %}
 {% include 'storyline/titleNav.html' %}
-<div class="">
-    <div class="media">
-      <img class="rounded-circle account-img" style="float: left; width: 100px;height: 100px;" src="{{ user.profile.image.url }}">
-      <div class="media-body" >
-        <ul style="list-style-type:none;">
-          <li>Name: {{ user.username }}</li>
-          <hr>
-          <li>Practice: Andrew Health Clinic</li>
-          <hr>
-          <li>City: Denver</li>
-          <hr>
-          <li>State: Colorado</li>
-          <hr>
-          <li>Licensure: AMA</li>
-          <hr>
-          <button>Contact</button>
-        </ul>
-      </div>
+<div class="dr-profile-container">
+  <div id="di" class="dr-info">
+    <img class="rounded-circle dr-profile-account-img" src="{{ user.profile.image.url }}">
+    <div class="dr-info-content">
+      <p>Name: {{ user.username }}</p>
+      <hr>
+      <p>Practice: Andrew Health Clinic</p>
+      <hr>
+      <p>City: Denver</p>
+      <hr>
+      <p>State: Colorado</p>
+      <hr>
+      <p>Licensure: AMA</p>
+      <hr>
+      <button class="dr-contact-button">Contact</button>
     </div>
-    <!-- <form method="POST" enctype="multipart/form-data">
+  </div>
+  <!-- <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <fieldset class="form-group">
           <legend class="border-bottom mb-4">Profile Info</legend>
@@ -32,18 +30,26 @@
           <button class="btn btn-outline-info" type="submit">Update</button>
       </div>
   </form> -->
-  </div>
-  <div>
-    <h4>Currently taking new Clients</h4>
-    <input type="checkbox">
-    <h4>In-Person | Telehealth | Both</h4>
-    
-  </div>
-  <div>
-    <p>
-      specializes in: Mental Stress
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  <div id="tc" class="taking-clients">
+    <p>Currently taking new Clients</p>
+    <p>In-Person | Telehealth | Both</p>
+  </div>
+
+  <div id="dd" class="dr-desc">
+    <p>
+      Specializes in: Mental Stress
+      <br>
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.
+      <br>
+      <br>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
   </div>
+</div>
 {% endblock content %}

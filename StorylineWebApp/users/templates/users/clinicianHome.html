@@ -1,54 +1,38 @@
-{% extends "storyline/titleNav.html" %}
+{% extends "storyline/base.html" %}
 {% block content %}
+{% include 'storyline/titleNav.html' %}
 
-<div class="" style="width: 100%;">
-    <div class="dashboard" style="margin: 0 auto; width: 100%;">
+<div class="">
+    <div class="">
         <!-- my clients and my appointments -->
-        <div class="dashboard display-animation" style="margin: 0 auto; width: 100%;">
+        <div class="dr-home-button-container display-animation" style="margin: 0 auto; width: 100%;">
             <!-- my clients -->
-            <a class="tile tile-lg tile-orange ripple-effect" href="#">
-                <span class="content-wrapper">
-                    <span class="tile-content">
-                        <span class="tile-img"
-                            style="background-image: url(https://www.google.com/design/images/google_spec.png);"></span>
-                        <span class="tile-holder tile-holder-sm">
-                            <span class="title">Google Guidelines</span>
-                        </span>
-                    </span>
-                </span>
+            <a class="dr-home-button-link" href="#">
+                <div id="mc" class="dr-home-button" >
+                    {% include 'users/clinicianHomeButton.html' with type="client" %}
+                </div>
             </a>
             <!-- my appointments -->
-            <a class="tile tile-lg tile-purple ripple-effect" href="#">
-                <span class="content-wrapper">
-                    <span class="tile-content">
-                        <span class="tile-img"
-                            style="background-image: url(https://www.google.com/design/images/materialreel.png);"></span>
-                        <span class="tile-holder tile-holder-sm">
-                            <span class="title">Material Design Reel</span>
-                        </span>
-                    </span>
-                </span>
+            <a class="dr-home-button-link" href="#">
+                <div id="ap" class="dr-home-button" >
+                    {% include 'users/clinicianHomeButton.html' with type="appointment" %}
+                </div>
             </a>
         </div>
         <!-- my clients label -->
         <div style="width: 100%;">
             <h2>My Clients</h2>
-            <button style="float: right;">Alphabetically</button>
+            
         </div>
         <!-- client list -->
-        <div class="dashboard display-animation" style="margin: 0 auto; width: 100%;">
-            <a class="tile tile-lsr tile-pink ripple-effect" style="width: 100%;" href="#">
-                <span class="content-wrapper">
-                    <span class="tile-content">
-                        <span class="tile-img"
-                            style="background-image: url(https://www.google.com/design/images/google_spec.png);"></span>
-                        <span class="tile-holder tile-holder-sm">
-                            <span class="title">Google Guidelines</span>
-                        </span>
-                    </span>
-                </span>
-            </a>
+
+        {% for client in clients %}
+        <div class="patient-tile">
+            {% include 'users/patientTile.html' with client=client %}
         </div>
+
+        {% endfor %}
+
     </div>
 </div>
 {% endblock content %}

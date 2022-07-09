@@ -1,12 +1,27 @@
-<div>
-    <img class="rounded-circle account-img" style="float: left; width: 100px;height: 100px;" src="{{ user.profile.image.url }}">
-    <h3>Elsie Reed</h3>
-    <p>DOB: 14-Oct-1989</p>
-    <p>Email: elsie.reed@gmail.com</p>
-    <p>Gender: Female</p>
-    <p>Race: White</p>
-    <p>Profession: Student</p>
-    <h2>No. of Sessions: 14</h2>
-    <p>Start Date: 20-Jan-2021</p>
-    <p>Last Session: 2-Mar-2022</p>
+<div class="patient-tile-content">
+
+    <div class="patient-img-container">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+    </div>
+
+    <div class="patient-tile-copy">
+        <p>
+            <span class="large-title">{{ client.name }}</span>
+            <span class="large-title" style="float: right;">No. of Sessions: {{ client.session_count }}</span>
+        </p>
+
+        <p>
+            <span><b>DOB:</b>{{ client.dob }}</span>
+            <span><b>Email:</b>{{ client.email }}</span>
+            <span style="float: right;"><b>Start Date:</b>{{ client.start_date }}</span>
+        </p>
+
+        <p>
+            <span><b>Gender:</b>{{ client.gender }}</span>
+            <span><b>Race:</b>{{ client.race }}</span>
+            <span><b>Profession:</b>{{ client.profession }}</span>
+            <span style="float: right;"><b>Last Session:</b>{{ client.last_session }}</span>
+        </p>
+    </div>
+    </span>
 </div>
