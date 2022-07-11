@@ -1,12 +1,12 @@
 <div class="patient-tile-content">
 
     <div class="patient-img-container">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <img class="rounded-circle account-img" src="{{ client.image.url }}">
     </div>
 
     <div class="patient-tile-copy">
         <p>
-            <span class="large-title">{{ client.name }}</span>
+            <span class="large-title">{{ client.firstName|add:" "|add:client.lastName }}</span>
             <span class="large-title" style="float: right;">No. of Sessions: {{ client.session_count }}</span>
         </p>
 

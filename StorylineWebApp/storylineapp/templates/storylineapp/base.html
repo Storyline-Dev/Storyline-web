@@ -34,19 +34,20 @@
           <!-- Navbar Right Side -->
           <div class="navbar-nav">
             {% if user.is_authenticated %}
-            <a class="nav-item nav-link" href="{% url 'clinician-home' %}">Home</a>
-            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-            <!-- Notes -->
-            <a class="nav-icon-link" href="#">
-              <img class="nav-icon" src="{% static 'storyline/filesIcon.png' %}">
+            
+            <a class="nav-fa-icons" href="{% url 'clinician-home' user.username%}">
+              <i class="fa-solid fa-house fa-2x"></i>
             </a>
-            <!-- settings -->
-            <a class="nav-icon-link" href="{% url 'logout' %}">
-              <img class="nav-icon" src="{% static 'storyline/settingsIcon.png' %}">
+            <a class="nav-fa-icons" href="{% url 'logout' %}">
+              <i class="fa-solid fa-gear fa-2x"></i>
+            </a>
+            <!-- Notes -->
+            <a class="nav-fa-icons" href="#">
+              <i class="fa-solid fa-note-sticky fa-2x"></i>
             </a>
             <!-- Notifications -->
-            <a class="nav-icon-link" href="#">
-              <img class="nav-icon" src="{% static 'storyline/notificationsIcon.png' %}">
+            <a class="nav-fa-icons" href="#">
+              <i class="fa-solid fa-bell fa-2x"></i>
             </a>
             <a class="nav-item nav-link" href="{% url 'clinician-profile' %}">
               <div class="profile-tile">
@@ -55,7 +56,7 @@
               </div>
             </a>
             {% else %}
-            {% include "storyline/loginSignUp.html" %}
+            {% include "storylineapp/loginSignUp.html" %}
 
             {% endif %}
           </div>
@@ -65,10 +66,10 @@
   </header>
   <main role="main" class=" ">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         {% if messages %}
         {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
+        <div class="alert alert-{{ message.tags }} custom-alert">
           {{ message }}
         </div>
         {% endfor %}

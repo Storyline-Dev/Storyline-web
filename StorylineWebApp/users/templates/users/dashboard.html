@@ -1,10 +1,13 @@
-{% extends "storyline/base.html" %}
+{% extends "storylineapp/base.html" %}
 {% block content %}
-{% include 'storyline/titleNav.html' %}
+{% include 'storylineapp/titleNav.html' %}
 <!-- client tile -->
 <a class="display-animation ripple-effect" href="#">
   <div class="patient-tile">
-    {% include 'users/patientTile.html' %}
+    <a href="{% url 'client-update' client.id  %}">
+      {% include 'users/patientTile.html' with client=client %}
+    </a>
+    
   </div>
 </a>
 

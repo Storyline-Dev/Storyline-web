@@ -249,11 +249,6 @@ body {
   padding: 15px;
 }
 
-.backnav{
-  width: 100%;
-  margin: 0 auto; 
-  width: 1140px;
-}
 
 /*-- Display animation -------------------------------- */
 .display-animation > * {
@@ -382,17 +377,6 @@ profile-tile {
   margin: 17px 15px 17px 0px;
 }
 
-.back-arrow-img {
-  width: auto;
-  height: auto;
-  max-width: 38px;
-  max-height: 38px;
-}
-
-.title-nav {
-  margin-top: 31px;
-}
-
 .nav-icon-link {
   padding-right: 15px;
   padding-top: 17px;
@@ -416,11 +400,11 @@ profile-tile {
 
 .patient-tile {
   background-color: white;
-  width: calc(100% - 30px);
+  width: calc(100% - 120px);
   height: 133px;
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
   border-radius: 15px;
-  margin: 15px;
+  margin: 15px 60px;
 }
 
 .patient-tile-content {
@@ -464,7 +448,7 @@ profile-tile {
 
 .feature-tile-container {
   display: grid;
-  background-color: red;
+  /* background-color: red; */
   height: 1000px;
   max-width: 1190px;
   margin: 0 auto;
@@ -484,7 +468,7 @@ profile-tile {
 @media only screen and (max-width:1200px) {
   .feature-tile-container {
     display: grid;
-    background-color: yellow;
+    /* background-color: yellow; */
     height: 1315px;
     max-width: 907px;
     margin: 0 auto;
@@ -507,7 +491,7 @@ profile-tile {
 @media only screen and (max-width:1000px) {
   .feature-tile-container {
     display: grid;
-    background-color: rgb(177, 105, 184);
+    /* background-color: rgb(177, 105, 184); */
     height: 1000px;
     max-width: 768px;
     margin: 0 auto;
@@ -541,7 +525,7 @@ profile-tile {
 @media only screen and (max-width:768px) {
   .feature-tile-container {
     display: grid;
-    background-color: blue;
+    /* background-color: blue; */
     height: 1500px;
     max-width: 550px;
     margin: 0 auto;
@@ -568,7 +552,7 @@ profile-tile {
 @media only screen and (max-width:550px) {
   .feature-tile-container {
     display: grid;
-    background-color: rgb(164, 208, 61);
+    /* background-color: rgb(164, 208, 61); */
     height: 3450px;
     max-width: 312px;
     margin: 0 auto;
@@ -664,7 +648,6 @@ profile-tile {
 .account-img {
   height: 100px;
   width: 100px;
-  background-color: hotpink;
 }
 
 .patient-img-container {
@@ -755,14 +738,13 @@ span {
 .dr-home-button-container {
   display: grid;
   height: 163px;
-  max-width: 1190px;
-  margin: 0 auto;
+  max-width: calc(100% - 120px);
+  margin: 15px 60px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas:
     "mc mc mc ap ap ap";
   grid-gap: 15px;
-  padding: 35px;
 }
 
 .dr-home-button-link {
@@ -787,4 +769,72 @@ span {
 .view-add-buttons {
   width: 100%;
   display: inline-flex;
+}
+
+.list-view-header {
+  margin: 15px 65px;
+  width: calc(100% - 130px);
+  height: 50px;
+  position: relative;
+}
+
+.list-view-title {
+  position: absolute;
+  left: 0px;
+}
+
+.list-view-sort {
+  position: absolute;
+  right: 0px;
+}
+
+.list-view-sort-button {
+  height: 42px;
+  border: none;
+  color: #4E49FF;
+  font-weight: 300;
+  background-color: #f5f5f5;
+}
+
+.sort-icon {
+  margin-right: 15px;
+}
+
+.backnav-back-icon{
+  /* position: absolute; */
+  float: left;
+  margin-right: 25px;
+  color: rgb(150, 150, 150);
+}
+
+.title-nav {
+  width: calc(100% - 120px);
+  margin: 31px 60px 15px 60px;
+}
+
+/* alert classes */
+.alert-container {
+  width: 100%;
+  height: 55px;
+}
+
+/* forms */
+
+.form-container {
+  width: calc(100% - 120px);
+  max-width: 1190px;
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 3px;
+
+}
+
+.paginator-container {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.nav-fa-icons {
+  color: black;
+  margin: 25px 15px 0px 0px;
 }

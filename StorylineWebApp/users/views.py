@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, ClientRegisterForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -31,6 +31,20 @@ def dashboard(request):
 @login_required
 def clinicianHome(request):
     return render(request, 'users/clinicianHome.html')
+
+@login_required
+def registerClient(request):
+    if request.method == 'POST':
+        form = ClientRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, f'You have successfully added a new client.')
+            return redirect('clinician-home')
+    else:
+        form = ClientRegisterForm()
+
+    return render(request, 'users/registerClient.html', {'form': form})
 
 @login_required
 def clientHome(request):

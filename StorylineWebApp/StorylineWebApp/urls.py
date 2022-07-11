@@ -21,19 +21,24 @@ from storylineapp import views as storyline_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('', include('storylineapp.urls')),
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='user-register'),
     path('home/', storyline_views.home, name='storyline-home'),
-    path('clinician-home', user_views.clinicianHome, name='clinician-home'),
-    path('client-home', user_views.clientHome, name='client-home'),
-    path('clinician-profile', user_views.clinicianProfile, name='clinician-profile'),
-    path('client-profile', user_views.clientProfile, name='client-profile'),
+    path('client-home/', user_views.clientHome, name='client-home'),
+    path('clinician-profile/', user_views.clinicianProfile, name='clinician-profile'),
+    path('client-profile/', user_views.clientProfile, name='client-profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+    path('password-reset/', auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'), name='password_reset'),
+    path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
+    path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
+    path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'),
     path('profile/', user_views.profile, name='user-profile'),
     path('dashboard/', user_views.dashboard, name='user-dashboard'),
+    path('register-client/', user_views.registerClient, name='register-client'),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 
